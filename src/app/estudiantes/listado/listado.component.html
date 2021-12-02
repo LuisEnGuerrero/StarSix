@@ -1,0 +1,40 @@
+<div>
+    <br><br>
+    <div class="left_side_bar">
+
+      <div class="list-group" style="float: left; padding-right: 100px;">
+        <a [routerLink]="['/tareas/']" class="list-group-item list-group-item-action">Tareas</a>
+        <a [routerLink]="['/grupos/']" class="list-group-item list-group-item-action">Grupos</a>
+        <a [routerLink]="['/materias/']" class="list-group-item list-group-item-action">Mis asignaturas</a>
+        <a href="#" class="list-group-item list-group-item-action">Calificaciones</a>
+        </div>
+    </div>
+    <div class="container">              
+      <div class="row">
+        <div class="col">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Estudiante:</th>
+                <th scope="col">Institución:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of estudiantes">
+                <td><button type="button" class="btn btn-ligth btn-sm text-primary" [routerLink]="['/estudiantes/registro', item._id]">{{item.nombres}} {{item.apellidos}}</button></td>
+                <td><button type="button" class="btn btn-ligth btn-sm text-primary" >{{item.institucion}}</button></td>
+                <td><button type="button" class="btn btn-warning btn-sm px-2 mx-2" [routerLink]="['/estudiantes/registro', item._id]">Editar</button>
+                    <button type="button" class="btn btn-danger btn-sm px-2 mx-2" (click)="eliminarEstudiante(item._id)">Eliminar</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <b><strong>{{estudiantes.length}}</strong> Estudiantes registrados en <strong>StarSix</strong> Proyect </b>
+          <div class="mx-2 p-2">
+            <button type="button" class="btn btn-primary text-white" routerLink="/estudiantes/registro">Registrar Estudiante</button>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+
+</div>

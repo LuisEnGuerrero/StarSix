@@ -1,0 +1,51 @@
+<div>
+    <br><br>
+    <div class="left_side_bar">
+
+      <div class="list-group" style="float: left; padding-right: 100px;">
+        <a [routerLink]="['/estudiantes/']" class="list-group-item list-group-item-action">Zona de Estudiantes</a>
+        <a [routerLink]="['/profesores/']" class="list-group-item list-group-item-action">Zona de Profesores</a>
+        <a [routerLink]="['/grupos/']" class="list-group-item list-group-item-action">Grupos</a>
+        <a [routerLink]="['/materias/']" class="list-group-item list-group-item-action">Materias</a>
+        </div>
+    </div>
+    <div class="container">              
+      <div class="row">
+        <div class="col">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Tarea:</th>
+                <th scope="col">Fue entregada?</th>
+                <th scope="col">Fecha de Vencimiento:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of tareas">
+                <td><button type="button" class="btn btn-ligth btn-sm text-primary" [routerLink]="['/tareas/registro', item._id]">{{item.titulo}}</button></td>
+                <td><button type="button" class="btn btn-ligth btn-sm text-primary" [routerLink]="['/tareas/registro', item._id]">{{item.entregada}}</button></td>
+                <td><button type="button" class="btn btn-ligth btn-sm text-primary" >{{item.fecha_vencimiento}}</button></td>
+                <td><button type="button" class="btn btn-warning btn-sm px-2 mx-2" [routerLink]="['/tareas/registro', item._id]">Editar</button>
+                    <button type="button" class="btn btn-danger btn-sm px-2 mx-2" (click)="eliminarTarea(item._id)">Eliminar</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <b><strong>{{tareas.length}}</strong> Tareas registradas en <strong>StarSix</strong> Proyect </b>
+          <div class="mx-2 p-2">
+            <button type="button" class="btn btn-primary text-white" routerLink="/tareas/registro">Registrar Nueva Tarea</button>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+
+</div>
+<!--
+                <tr *ngFor="let item of instituciones">
+                <th scope="row">1++</th>
+                <td>{{item.nombres}}</td>
+                <td>{{item.direccion}}</td>
+                <td>{{item.ciudad}}</td>
+                <td>{{item.pais}}</td>
+                <td>{{item.telefono}}</td>
+-->

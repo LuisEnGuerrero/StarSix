@@ -1,0 +1,62 @@
+<div class="left_side_bar">
+
+  <div class="list-group" style="float: left; padding-right: 100px;">
+      <a href="#" class="list-group-item list-group-item-action">Noticias Institucionales</a>
+      <a [routerLink]="['/profesores/']" class="list-group-item list-group-item-action">Zona de Profesores</a>
+      <a [routerLink]="['/estudiantes/']" class="list-group-item list-group-item-action">Zona de Estudiantes</a>
+      <a [routerLink]="['/tareas/']" class="list-group-item list-group-item-action">Tareas</a>
+    </div>
+</div>
+<div class="container">              
+  <div class="row"><h3>Registro de Instituciones</h3>
+    <div class="col">
+
+    <form ngNativeValidate (submit)="guardarInstitucion()" class="row g-3">
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltip01" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="validationTooltip01" name="nombres" [(ngModel)]="Nombres" required>
+        <div class="valid-tooltip">
+          Correcto!
+        </div>
+      </div>
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltip02" class="form-label">Ciudad</label>
+        <input type="text" class="form-control" id="validationTooltip02" name="ciudad" [(ngModel)]="Ciudad" required>
+        <div class="valid-tooltip">
+          Correcto!
+        </div>
+      </div>
+      <div class="col-md-4 position-relative">
+        <label for="validationTooltip02" class="form-label">País</label>
+        <input type="text" class="form-control" id="validationTooltip02" name="pais" [(ngModel)]="Pais" required>
+        <div class="valid-tooltip">
+          Correcto!
+        </div>
+      </div>
+      <div class="col-md-6 position-relative">
+        <label for="validationTooltip03" class="form-label">Dirección</label>
+        <input type="text" class="form-control" id="validationTooltip03" name="direccion" [(ngModel)]="Direccion" required>
+        <div class="invalid-tooltip">
+          Por favor, Ingrese una dirección Válida
+        </div>
+      </div>
+      <div class="col-md-3 position-relative">
+        <label for="validationTooltip05" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" id="validationTooltip05" name="telefono" [(ngModel)]="Telefono" required>
+        <div class="invalid-tooltip">
+          Ingrese un número de Contacto.
+        </div>
+      </div>
+      <div class="col-12">
+        <input class="btn btn-primary" type="submit" value="Guardar">
+        <input class="btn btn-secondary mx-2" type="reset" routerLink="/instituciones" value="Cancelar">
+      </div>
+    </form>
+  </div>
+</div>
+
+          <!--
+            <form ngNativeValidate (submit)="guardarInstitucion" >
+            [(ngModel)]=""
+            routerLink="/instituciones
+          -->

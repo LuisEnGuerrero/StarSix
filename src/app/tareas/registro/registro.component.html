@@ -1,0 +1,51 @@
+<div class="left_side_bar">
+
+    <div class="list-group" style="float: left; padding-right: 100px;">
+        <a [routerLink]="['/grupos/']" class="list-group-item list-group-item-action">Grupos</a>
+        <a [routerLink]="['/profesores/']" class="list-group-item list-group-item-action">Zona de Profesores</a>
+        <a [routerLink]="['/estudiantes/']" class="list-group-item list-group-item-action">Zona de Estudiantes</a>
+        <a [routerLink]="['/materias/']" class="list-group-item list-group-item-action">Materias</a>
+      </div>
+  </div>
+  <div class="container">              
+    <div class="row">
+      <div class="col">
+  
+        <form ngNativeValidate  (submit)="guardarTarea()">
+          <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" name="titulo" [(ngModel)]="titulo" required>
+              <label for="floatingInput">Tarea:</label>
+          </div>
+          <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" name="descripcion" [(ngModel)]="descripcion" required>
+              <label for="floatingInput">Descripción</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="entregada" [(ngModel)]="entregada">
+            <label for="floatingInput">Ya se entrego?</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="calificacion" [(ngModel)]="calificacion" required>
+            <label for="floatingInput">Calificación Obtenida:</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="fecha_entrega" [(ngModel)]="fecha_entrega">
+            <label for="floatingInput">Fecha en que la Entrega:</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="fecha_vencimiento" [(ngModel)]="fecha_vencimiento" required>
+            <label for="floatingInput">Fecha de Vencimiento:</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="materia" [(ngModel)]="materia" required>
+            <label for="floatingInput">Materia</label>
+          </div>
+          <div class="col-12">
+            <input class="btn btn-primary" type="submit" value="Guardar">
+            <input class="btn btn-secondary mx-2" type="reset" routerLink="/tareas" value="Cancelar">
+          </div>
+       </form>
+    </div>
+    </div>
+ 
+</div>

@@ -1,0 +1,82 @@
+<div class="left_side_bar">
+
+    <div class="list-group" style="float: left; padding-right: 100px;">
+        <a [routerLink]="['/grupos/']" class="list-group-item list-group-item-action">Grupo</a>
+        <a [routerLink]="['/tareas/']" class="list-group-item list-group-item-action">Tareas</a>
+        <a [routerLink]="['/tareas/']" class="list-group-item list-group-item-action">Tareas por Vencerse</a>
+        <a href="#" class="list-group-item list-group-item-action">Calificaciones</a>
+        <a href="#" class="list-group-item list-group-item-action">observaciones</a>
+        <a href="#" class="list-group-item list-group-item-action">Mesa de Ayuda</a>
+      </div>
+  </div>
+  <div class="container">
+    <div class="row"><h3>Registro de Estudiantes</h3>
+      <div class="col">
+      
+          <form ngNativeValidate  (submit)="guardarEstudiante()">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="nombres" [(ngModel)]="nombres" required>
+                <label for="floatingInput">Nombres</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="apellidos" [(ngModel)]="apellidos" required>
+                <label for="floatingInput">Apellidos</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="correo" [(ngModel)]="correo" required>
+                <label for="floatingInput">Correo</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" name="telefono" [(ngModel)]="telefono" required>
+              <label for="floatingInput">Teléfono</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" name="acudiente" [(ngModel)]="acudiente" required>
+              <label for="floatingInput">Acudiente</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="correo_acudiente" [(ngModel)]="correo_acudiente" required>
+              <label for="floatingInput">Correo del Acudiente</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="telefono_acudiente" [(ngModel)]="telefono_acudiente" required>
+                <label for="floatingInput">Teléfono del Acudiente</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="institucion" [(ngModel)]="institucion" required>
+                <label for="floatingInput">Institución</label>
+              </div>
+                <div class="col-12">
+              <input class="btn btn-primary" type="submit" value="Guardar">
+              <input class="btn btn-secondary mx-2" type="reset" routerLink="/estudiantes/" value="Cancelar">
+            </div>
+         </form>
+      </div>
+    </div>
+  </div>
+
+
+<!--
+              <div class="form-floating mb-3">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example" formControlName="Institucion">
+                  <option [ngValue]="null" selected>Institucion:</option>
+                  <option *ngFor="let i of instituciones" [ngValue]="i.nombres">{{i.nombres}}</option>
+                </select>
+                <label for="floatingSelect">Seleccione la Institución:</label>
+              </div>
+              <div class="form-floating mb-3">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example" formControlName="Materia">
+                  <option [ngValue]="null" selected>Materia:</option>
+                  <option *ngFor="let m of materias" [ngValue]="m.nombres">{{m.nombres}}</option>
+                </select>
+                <label for="floatingSelect">Seleccione la Materia</label>
+              </div>
+              <div class="form-floating mb-3">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example" formControlName="Grupos">
+                  <option [ngValue]="null" selected>Institucion:</option>
+                  <option *ngFor="let g of grupos" [ngValue]="g.nombres">{{g.nombres}}</option>
+                </select>
+                <label for="floatingSelect">Seleccione los Grupos</label>
+              </div>
+
+-->

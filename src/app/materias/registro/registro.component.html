@@ -1,0 +1,50 @@
+<div>
+    <br><br>
+    <div class="left_side_bar">
+
+      <div class="list-group" style="float: left; padding-right: 100px;">
+        <a [routerLink]="['/estudiantes/']" class="list-group-item list-group-item-action">Zona de Estudiantes</a>
+        <a [routerLink]="['/profesores/']" class="list-group-item list-group-item-action">Zona de Profesores</a>
+        <a [routerLink]="['/tareas/']" class="list-group-item list-group-item-action">Tareas</a>
+        <a href="#" class="list-group-item list-group-item-action">Mesa de Ayuda</a>
+        </div>
+    </div>
+    <div class="container">              
+      <div class="row"><h3>Registro de Materias</h3>
+        <div class="col">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Materia:</th>
+                <th scope="col">Grado:</th>
+              </tr>
+            </thead>
+          </table>
+            <form ngNativeValidate (submit)="guardarMateria()" class="row g-3">
+              <div class="row g-2">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGrid" name="nombre" [(ngModel)]="nombre" required>
+                    <label for="floatingInputGrid">Materia:</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGrid" name="grado" [(ngModel)]="grado" required>
+                    <label for="floatingInputGrid">Grado:</label>
+                  </div>
+                </div>
+              </div>
+              <div>
+                  <input class="btn btn-primary" type="submit" value="Guardar">
+                  <input class="btn btn-secondary mx-2" type="reset" routerLink="/materias" value="Cancelar">    
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+ 
+   
+
+</div>

@@ -1,0 +1,51 @@
+<div>
+    <br><br>
+    <div class="left_side_bar">
+
+      <div class="list-group" style="float: left; padding-right: 100px;">
+        <a [routerLink]="['/estudiantes/']" class="list-group-item list-group-item-action">Zona de Estudiantes</a>
+        <a [routerLink]="['/profesores/']" class="list-group-item list-group-item-action">Zona de Profesores</a>
+        <a href="#" class="list-group-item list-group-item-action">Mesa de Ayuda</a>
+        <a [routerLink]="['/tareas/']" class="list-group-item list-group-item-action">Tareas</a>
+        </div>
+    </div>
+    <div class="container">              
+      <div class="row">
+        <div class="col">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Grupo:</th>
+                <th scope="col">Grado:</th>
+                <th scope="col">Cantidad de Alumnos:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of grupos">
+                <td><button type="button" class="btn btn-ligth btn-sm text-primary" [routerLink]="['/grupos/registro', item._id]">{{item.nombre}}</button></td>
+                <td><button type="button" class="btn btn-ligth btn-sm text-primary" [routerLink]="['/grupos/registro', item._id]">{{item.grado}}</button></td>
+                <td><button type="button" class="btn btn-ligth btn-sm text-primary" >{{item.cantidad_alumnos}}</button></td>
+                <td><button type="button" class="btn btn-warning btn-sm px-2 mx-2" [routerLink]="['/grupos/registro', item._id]">Editar</button>
+                    <button type="button" class="btn btn-danger btn-sm px-2 mx-2" (click)="eliminarGrupo(item._id)">Eliminar</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <b><strong>{{grupos.length}}</strong> Grupos registrados en <strong>StarSix</strong> Proyect </b>
+          <div class="mx-2 p-2">
+            <button type="button" class="btn btn-primary text-white" routerLink="/grupos/registro">Registrar Grupo</button>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+
+</div>
+<!--
+                <tr *ngFor="let item of instituciones">
+                <th scope="row">1++</th>
+                <td>{{item.nombres}}</td>
+                <td>{{item.direccion}}</td>
+                <td>{{item.ciudad}}</td>
+                <td>{{item.pais}}</td>
+                <td>{{item.telefono}}</td>
+-->

@@ -1,0 +1,63 @@
+<div class="left_side_bar">
+
+    <div class="list-group" style="float: left; padding-right: 100px;">
+        <a href="#" class="list-group-item list-group-item-action">Noticias Institucionales</a>
+        <a [routerLink]="['/profesores/']" class="list-group-item list-group-item-action">Zona de Profesores</a>
+        <a [routerLink]="['/estudiantes/']" class="list-group-item list-group-item-action">Zona de Estudiantes</a>
+        <a [routerLink]="['/tareas/']" class="list-group-item list-group-item-action">Tareas</a>
+      </div>
+  </div>
+  <div class="container">              
+    <div class="row"><h3>Registro de Grupos</h3>
+      <div class="col">
+  
+      <form ngNativeValidate (submit)="guardarGrupo()" class="row g-3">
+        <div class="col-md-4 position-relative">
+          <label for="validationTooltip01" class="form-label">Grupo:</label>
+          <input type="text" class="form-control" id="validationTooltip01" name="nombre" [(ngModel)]="nombre" required>
+          <div class="valid-tooltip">
+            Correcto!
+          </div>
+        </div>
+        <div class="col-md-4 position-relative">
+          <label for="validationTooltip02" class="form-label">Grado:</label>
+          <input type="text" class="form-control" id="validationTooltip02" name="grado" [(ngModel)]="grado" required>
+          <div class="valid-tooltip">
+            Correcto!
+          </div>
+        </div>
+        <div class="col-md-4 position-relative">
+          <label for="validationTooltip02" class="form-label">Número de Alumnos del grupo:</label>
+          <input type="text" class="form-control" id="validationTooltip02" name="cantidad_alumnos" [(ngModel)]="cantidad_alumnos" required>
+          <div class="valid-tooltip">
+            Correcto!
+          </div>
+        </div>
+        <div class="col-md-6 position-relative">
+          <label for="validationTooltip03" class="form-label">Tareas:</label>
+          <input type="text" class="form-control" id="validationTooltip03" name="tareas" [(ngModel)]="tareas" required>
+          <div class="invalid-tooltip">
+            Por favor, Ingrese una Tarea Válida
+          </div>
+        </div>
+        <div class="col-md-3 position-relative">
+          <label for="validationTooltip05" class="form-label">Estudiantes:</label>
+          <input type="text" class="form-control" id="validationTooltip05" name="estudiantes" [(ngModel)]="estudiantes" required>
+          <div class="invalid-tooltip">
+            Ingrese un Estudiante.
+          </div>
+        </div>
+        <div class="col-12">
+          <input class="btn btn-primary" type="submit" value="Guardar">
+          <input class="btn btn-secondary mx-2" type="reset" routerLink="/grupos" value="Cancelar">
+        </div>
+      </form>
+    </div>
+  </div>
+  
+            <!--
+              <form ngNativeValidate (submit)="guardarInstitucion" >
+              [(ngModel)]=""
+              routerLink="/instituciones
+            -->
+  
